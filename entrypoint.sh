@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+# Evaluate environment variables
+INPUT_IMAGE=$(echo $(eval "echo $INPUT_IMAGE"))
+INPUT_OPTIONS=$(echo $(eval "echo $INPUT_OPTIONS"))
+
 if [ ! -z $INPUT_USERNAME ];
 then echo $INPUT_PASSWORD | docker login $INPUT_REGISTRY -u $INPUT_USERNAME --password-stdin
 fi
